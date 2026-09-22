@@ -1,6 +1,6 @@
 {
   "name": "commit-msg-ai",
-  "displayName": "AI Commit Craft",
+  "displayName": "GitScribe by AdnanDEV",
   "description": "Generate concise git commit messages from your diff using the Claude Code CLI",
   "version": "0.0.1",
   "publisher": "AdnanDEV",

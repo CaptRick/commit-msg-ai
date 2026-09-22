@@ -1,4 +1,4 @@
-# AI Commit Craft
+# GitScribe by AdnanDEV
 
 A personal VS Code extension that generates concise git commit messages from
 your diff, using your existing Claude Code CLI subscription (no separate API
