@@ -1,0 +1,72 @@
+{
+  "name": "commit-msg-ai",
+  "displayName": "Commit Message AI",
+  "description": "Generate concise git commit messages from your diff using the Claude Code CLI",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "SCM Providers"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitMsgAI.generate",
+        "title": "Generate Commit Message (AI)",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "menus": {
+      "scm/inputBox": [
+        {
+          "command": "commitMsgAI.generate",
+          "when": "scmProvider == git"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Commit Message AI",
+      "properties": {
+        "commitMsgAI.claudePath": {
+          "type": "string",
+          "default": "claude",
+          "description": "Path to the Claude Code CLI binary. Defaults to 'claude' (resolved via PATH). Set an absolute path if the CLI isn't on PATH, e.g. /Users/apple/.local/bin/claude"
+        },
+        "commitMsgAI.model": {
+          "type": "string",
+          "default": "sonnet",
+          "description": "Claude model alias passed to `claude --model` (e.g. sonnet, opus, haiku)."
+        },
+        "commitMsgAI.maxDiffChars": {
+          "type": "number",
+          "default": 8000,
+          "description": "Maximum number of diff characters sent to Claude. Larger diffs are truncated with a notice."
+        },
+        "commitMsgAI.timeoutMs": {
+          "type": "number",
+          "default": 30000,
+          "description": "Milliseconds to wait for the Claude CLI before timing out."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "check-types": "tsc --noEmit -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.5.0"
+  }
+}
