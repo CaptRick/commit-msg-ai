@@ -1,9 +1,9 @@
 {
   "name": "commit-msg-ai",
-  "displayName": "Commit Message AI",
+  "displayName": "AI Commit Craft",
   "description": "Generate concise git commit messages from your diff using the Claude Code CLI",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "AdnanDEV",
   "license": "MIT",
   "repository": {
     "type": "git",

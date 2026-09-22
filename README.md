@@ -1,4 +1,4 @@
-# Commit Message AI
+# AI Commit Craft
 
 A personal VS Code extension that generates concise git commit messages from
 your diff, using your existing Claude Code CLI subscription (no separate API
